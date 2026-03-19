@@ -898,17 +898,18 @@ function App() {
                     viewBox="0 0 10 10"
                     refX="8"
                     refY="5"
-                    markerWidth="7"
-                    markerHeight="7"
+                    markerWidth="8.5"
+                    markerHeight="8.5"
+                    markerUnits="strokeWidth"
                     orient="auto-start-reverse"
                   >
-                    <path d="M 0 0 L 10 5 L 0 10 z" fill="#7DDDD0" opacity="0.95" />
+                    <path d="M 0 0 L 10 5 L 0 10 z" fill="#8CE7DA" opacity="1" />
                   </marker>
                 </defs>
                 <g
                   fill="none"
                   stroke="url(#heroStroke)"
-                  strokeWidth="2.4"
+                  strokeWidth="2.8"
                   strokeLinecap="round"
                   markerEnd="url(#heroArrow)"
                 >
