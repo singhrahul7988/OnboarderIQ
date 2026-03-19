@@ -129,47 +129,47 @@ const builtWithCards = [
 
 const demoPresets = [
   {
-    id: 'priya-india',
+    id: 'ananya-india',
     label: 'Priya Sharma • Software Engineer • India',
     variables: {
-      first_name: 'Priya',
-      last_name: 'Sharma',
-      email: 'priya.sharma@onboardiq.ai',
-      role: 'Software Engineer',
-      department: 'Engineering',
-      start_date: '2026-04-01',
-      manager_name: 'Neha Verma',
-      manager_email: 'neha.verma@onboardiq.ai',
+      first_name: 'Ananya',
+      last_name: 'Rao',
+      email: 'ananya.rao@onboardiq.ai',
+      role: 'Solutions Architect',
+      department: 'Customer Success',
+      start_date: '2026-04-08',
+      manager_name: 'Rohit Mehta',
+      manager_email: 'rohit.mehta@onboardiq.ai',
       region: 'India',
     },
   },
   {
-    id: 'ahmed-uae',
+    id: 'omar-uae',
     label: 'Ahmed Al-Rashid • Sales Manager • UAE',
     variables: {
-      first_name: 'Ahmed',
-      last_name: 'Al-Rashid',
-      email: 'ahmed.alrashid@onboardiq.ai',
-      role: 'Sales Manager',
-      department: 'Sales',
-      start_date: '2026-04-15',
-      manager_name: 'Fatima Hassan',
-      manager_email: 'fatima.hassan@onboardiq.ai',
+      first_name: 'Omar',
+      last_name: 'Farouk',
+      email: 'omar.farouk@onboardiq.ai',
+      role: 'Revenue Operations Lead',
+      department: 'Operations',
+      start_date: '2026-04-18',
+      manager_name: 'Layla Nasser',
+      manager_email: 'layla.nasser@onboardiq.ai',
       region: 'UAE',
     },
   },
   {
-    id: 'sofia-canada',
+    id: 'maya-canada',
     label: 'Sofia Turner • Product Designer • Canada',
     variables: {
-      first_name: 'Sofia',
-      last_name: 'Turner',
-      email: 'sofia.turner@onboardiq.ai',
-      role: 'Product Designer',
-      department: 'Design',
-      start_date: '2026-05-06',
-      manager_name: 'Marcus Lee',
-      manager_email: 'marcus.lee@onboardiq.ai',
+      first_name: 'Maya',
+      last_name: 'Chen',
+      email: 'maya.chen@onboardiq.ai',
+      role: 'Product Marketing Manager',
+      department: 'Marketing',
+      start_date: '2026-05-12',
+      manager_name: 'Daniel Brooks',
+      manager_email: 'daniel.brooks@onboardiq.ai',
       region: 'Canada',
     },
   },
@@ -684,6 +684,8 @@ function App() {
   const [selectedPresetId, setSelectedPresetId] = useState(demoPresets[0].id);
   const selectedPreset = demoPresets.find((preset) => preset.id === selectedPresetId) ?? demoPresets[0];
   const selectedPresetEntries = Object.entries(selectedPreset.variables);
+  const formatPresetLabel = (preset) =>
+    `${preset.variables.first_name} ${preset.variables.last_name} - ${preset.variables.role} - ${preset.variables.region}`;
   const airiaEmbedDoc = createAiriaEmbedDoc({
     ...airiaEmbedConfig,
     variables: selectedPreset.variables,
@@ -1215,7 +1217,7 @@ function App() {
                       >
                         {demoPresets.map((preset) => (
                           <option key={preset.id} value={preset.id} className="bg-[#11142B] text-white">
-                            {preset.label}
+                            {formatPresetLabel(preset)}
                           </option>
                         ))}
                       </select>
