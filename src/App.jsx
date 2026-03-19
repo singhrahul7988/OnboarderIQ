@@ -207,6 +207,8 @@ const airiaEmbedConfig = {
   autoOpen: (import.meta.env.VITE_AIRIA_AUTO_OPEN || 'true') === 'true',
 };
 
+const githubRepoUrl = 'https://github.com/singhrahul7988/OnboarderIQ';
+
 const airiaEmbedDocumentCss = `
   :root {
     color-scheme: dark;
@@ -842,7 +844,9 @@ function App() {
                   <ArrowRight className="h-4 w-4" />
                 </motion.a>
                 <motion.a
-                  href="#footer"
+                  href={githubRepoUrl}
+                  target="_blank"
+                  rel="noreferrer"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.03] px-7 py-4 text-base font-semibold text-white transition hover:border-white/25 hover:bg-white/[0.06]"
@@ -1333,7 +1337,7 @@ function App() {
           </div>
 
           <div className="flex flex-wrap items-center gap-6 text-sm text-gray-400">
-            <a href="#footer" className="transition hover:text-white">
+            <a href={githubRepoUrl} target="_blank" rel="noreferrer" className="transition hover:text-white">
               GitHub
             </a>
             <a href="#footer" className="transition hover:text-white">
