@@ -176,17 +176,17 @@ const demoPresets = [
 ];
 
 const heroFlowLines = [
-  { d: 'M 128 184 L 210 184', style: 'solid' },
-  { d: 'M 310 184 L 392 184', style: 'solid' },
-  { d: 'M 492 184 L 574 184', style: 'solid' },
-  { d: 'M 674 184 C 758 184 760 100 850 100', style: 'dashed' },
-  { d: 'M 674 184 C 758 184 760 176 850 176', style: 'dashed' },
-  { d: 'M 674 184 C 758 184 760 252 850 252', style: 'dashed' },
-  { d: 'M 674 184 C 758 184 760 328 850 328', style: 'dashed' },
-  { d: 'M 934 100 C 986 100 988 190 1016 218', style: 'dashed' },
-  { d: 'M 934 176 C 980 176 988 202 1016 218', style: 'dashed' },
-  { d: 'M 934 252 C 980 252 988 234 1016 218', style: 'dashed' },
-  { d: 'M 934 328 C 986 328 988 246 1016 218', style: 'dashed' },
+  { d: 'M 140 184 L 198 184', style: 'solid' },
+  { d: 'M 322 184 L 380 184', style: 'solid' },
+  { d: 'M 504 184 L 562 184', style: 'solid' },
+  { d: 'M 686 184 C 752 184 770 108 836 100', style: 'dashed' },
+  { d: 'M 686 184 C 752 184 770 180 836 176', style: 'dashed' },
+  { d: 'M 686 184 C 752 184 770 248 836 252', style: 'dashed' },
+  { d: 'M 686 184 C 752 184 770 320 836 328', style: 'dashed' },
+  { d: 'M 946 100 C 984 100 992 186 1002 218', style: 'dashed' },
+  { d: 'M 946 176 C 982 176 992 204 1002 218', style: 'dashed' },
+  { d: 'M 946 252 C 982 252 992 232 1002 218', style: 'dashed' },
+  { d: 'M 946 328 C 984 328 992 250 1002 218', style: 'dashed' },
 ];
 
 const architectureLines = [
@@ -906,17 +906,14 @@ function App() {
                     <path d="M 0 0 L 10 5 L 0 10 z" fill="#8CE7DA" opacity="1" />
                   </marker>
                 </defs>
-                <g
-                  fill="none"
-                  stroke="url(#heroStroke)"
-                  strokeWidth="2.8"
-                  strokeLinecap="round"
-                  markerEnd="url(#heroArrow)"
-                >
+                <g fill="none" strokeLinecap="round">
                   {heroFlowLines.map((line) => (
                     <path
                       key={line.d}
                       d={line.d}
+                      stroke={line.style === 'solid' ? '#8CE7DA' : 'url(#heroStroke)'}
+                      strokeWidth={line.style === 'solid' ? '3.4' : '2.8'}
+                      markerEnd="url(#heroArrow)"
                       className={line.style === 'solid' ? 'flow-link-solid' : 'dash-flow'}
                     />
                   ))}
