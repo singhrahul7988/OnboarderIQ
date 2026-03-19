@@ -207,7 +207,7 @@ const airiaEmbedConfig = {
   autoOpen: (import.meta.env.VITE_AIRIA_AUTO_OPEN || 'true') === 'true',
 };
 
-const githubRepoUrl = 'https://github.com/singhrahul7988/OnboarderIQ';
+const githubRepoUrl = 'https://github.com/singhrahul7988/onboarder-iq';
 
 const airiaEmbedDocumentCss = `
   :root {
